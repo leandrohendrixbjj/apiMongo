@@ -45,6 +45,21 @@ route.put('/:id', buscaLivro(livros), (req,res) => {
     }
 });
 
+route.delete('/:id', buscaLivro(livros), (req,res) => {
+   try{
+      const indexLivro = res.buscaLivro;   
+      
+      if (indexLivro == -1)
+        throw Error;
+
+      livros.splice(indexLivro,1);
+      res.status(204).end();
+    }catch(err){
+       res.status(400);
+       res.json({message:'Erro na exclusão do livro'});
+    }   
+});
+
 function buscaLivro(livros){
    return (req,res,next) => {
       const livro = livros.findIndex(livro => livro.id == req.params.id);

@@ -1,10 +1,11 @@
 import express from 'express';
 const route = express.Router();
+import livros from '../src/models/Livro.js';
 
-const livros = [
-   {id:'1',nome:"O mundo de Sofia"},
-   {id:'2',nome:"Cronicas de Gelo e Fogo"}
-];
+// const livros = [
+//    {id:'1',nome:"O mundo de Sofia"},
+//    {id:'2',nome:"Cronicas de Gelo e Fogo"}
+// ];
 
 route.post('/', (req,res) => {
     livros.push(req.body);
@@ -12,7 +13,9 @@ route.post('/', (req,res) => {
 });
 
 route.get('/', (req,res) => {
-    res.status(200).json(livros);
+   livros.find((error,livros) => {
+      res.json(livros)   
+   });    
 });
 
 route.get('/:id', buscaLivro(livros), (req,res) => {

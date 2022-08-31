@@ -2,18 +2,9 @@ import express from 'express';
 const route = express.Router();
 import LivroController from '../controllers/LivroController.js';
 
-// const livros = [
-//    {id:'1',nome:"O mundo de Sofia"},
-//    {id:'2',nome:"Cronicas de Gelo e Fogo"}
-// ];
-
-// route.post('/', (req,res) => {
-//     livros.push(req.body);
-//     res.status(201).end();
-// });
-
 route
-  .get('/', LivroController.list);   
+  .get('/', LivroController.list)   
+  .post('/', LivroController.store)
 
 
 // route.get('/:id', buscaLivro(livros), (req,res) => {

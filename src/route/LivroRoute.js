@@ -3,8 +3,12 @@ const route = express.Router();
 import LivroController from '../controllers/LivroController.js';
 
 route
-  .get('/', LivroController.list)   
-  .post('/', LivroController.store)
+.post('/', LivroController.store)  
+.get('/', LivroController.list)   
+.get('/:id', LivroController.show)
+.put('/:id', LivroController.update)
+  
+
 
 
 // route.get('/:id', buscaLivro(livros), (req,res) => {
@@ -18,23 +22,6 @@ route
 //       res.status(404);
 //       res.json({error:'Livro não encontrado'});
 //    }
-// });
-
-// route.put('/:id', buscaLivro(livros), (req,res) => {   
-//     try{
-//       const indexLivro = res.buscaLivro;
-
-//       if (indexLivro == -1)
-//          throw Error;
-
-//       let livro = livros[indexLivro];
-//       livro.nome = req.body.nome;
-
-//       res.json(livro).end();  
-//     }catch(err){
-//        res.status(400);
-//        res.json({message:'Livro não encontrado'});
-//     }
 // });
 
 // route.delete('/:id', buscaLivro(livros), (req,res) => {
@@ -51,13 +38,5 @@ route
 //        res.json({message:'Erro na exclusão do livro'});
 //     }   
 // });
-
-// function buscaLivro(livros){
-//    return (req,res,next) => {
-//       const livro = livros.findIndex(livro => livro.id == req.params.id);
-//       res.buscaLivro = livro;
-//       next();         
-//    }
-// }
 
 export default route;

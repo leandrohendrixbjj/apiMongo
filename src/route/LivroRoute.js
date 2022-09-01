@@ -7,6 +7,7 @@ route
 .get('/', LivroController.list)   
 .get('/:id', LivroController.show)
 .put('/:id', LivroController.update)
+.delete('/:id', LivroController.delete)
   
 
 

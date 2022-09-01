@@ -1,5 +1,6 @@
 import express from 'express';
 import LivroRoute from './LivroRoute.js';
+import AutorRoute from './AutorRoute.js';
 
 const routes = (app) => {
     app.use(express.json());
@@ -9,6 +10,7 @@ const routes = (app) => {
     });
                  
     app.use('/api/livros', LivroRoute);
+    app.use('/api/autores', AutorRoute);
 }
 
 export default routes;

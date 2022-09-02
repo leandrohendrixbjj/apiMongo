@@ -12,12 +12,14 @@ class LivroController{
  
    static list = (req,res) => {
        livrosModel.find()
-       .then(livros => res.json(livros))
-       .catch(err => res.status(500).json({message:`${err.message} - falha busca livros`}));    
+        .populate('autor')        
+        .then(livros => res.json(livros))
+        .catch(err => res.status(500).json({message:`${err.message} - falha busca livros`}));    
     }
 
    static show = (req,res) => {
       livrosModel.findById(req.params.id)
+      .populate('autor', 'nome')
       .then(livro => res.json(livro))
       .catch(err => res.status(404).json({message:`Livro não encontrado`}));
    }

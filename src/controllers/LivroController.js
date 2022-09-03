@@ -17,7 +17,7 @@ class LivroController{
         .catch(err => res.status(500).json({message:`${err.message} - falha busca livros`}));    
     }
 
-   static show = (req,res) => {
+   static show = (req,res) => {     
       livrosModel.findById(req.params.id)
       .populate('autor', 'nome')
       .then(livro => res.json(livro))
@@ -35,7 +35,19 @@ class LivroController{
      livrosModel.findByIdAndDelete(req.params.id)
      .then( () => res.status(204).end())
      .catch(err => res.status(500).json({message:`Livro não existe`}));   
-   }      
+   }   
+   
+   static listForEditora = (req,res) => {
+     const {nome} = req.query;
+     
+     livrosModel.find({'editora': nome})
+     .then( (livros) => {
+        if (livros.length == 0)
+          res.status(404).end();
+
+        res.json(livros).end();  
+     }).catch(err => res.status(500).json({message:`Erro busca editora`}));
+   }
 }
 
 export default LivroController;

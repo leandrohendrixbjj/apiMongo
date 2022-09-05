@@ -1,0 +1,309 @@
+{
+	"info": {
+		"_postman_id": "4acf7a7a-0076-425e-81ac-47aa1e5210e7",
+		"name": "ApiMongo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5243657"
+	},
+	"item": [
+		{
+			"name": "Autores",
+			"item": [
+				{
+					"name": "Cadastra um Autor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\":\"Leandro\",\r\n    \"origem\":\"Brasil\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/autores",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"autores"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listagem de Autores",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/autores",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"autores"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Busca um Autor",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/autores/6310fce48319ee2f6ac3afa7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"autores",
+								"6310fce48319ee2f6ac3afa7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alteração de um Autor",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\":\"Leandro Soares\"   \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/autores/6310fce48319ee2f6ac3afa7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"autores",
+								"6310fce48319ee2f6ac3afa7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove um Autor",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/autores/6310fce48319ee2f6ac3afa7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"autores",
+								"6310fce48319ee2f6ac3afa7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Livros",
+			"item": [
+				{
+					"name": "Cadastra um Livro",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"titulo\":\"B\",\r\n    \"autor\":\"631256754da14dd0e52f8582\",\r\n    \"editora\":\"Got\",\r\n    \"numPagias\":350\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/livros",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"livros"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listagem de Livros",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/livros",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"livros"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Busca um livro ",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/livros/630f991e0d00b363dc135484",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"livros",
+								"630f991e0d00b363dc135484"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alteração de um Livro",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"autor\":\"631256754da14dd0e52f8582\"   \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/livros/630f991e0d00b363dc135484",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"livros",
+								"630f991e0d00b363dc135484"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove um Livro",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/livros/6310f3b18069ac458a308cf41",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"livros",
+								"6310f3b18069ac458a308cf41"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Busca Livro por  nome de autor",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/livros/busca/?nome=Got",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"livros",
+								"busca",
+								""
+							],
+							"query": [
+								{
+									"key": "nome",
+									"value": "Got"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Index",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
